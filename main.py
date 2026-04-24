@@ -104,3 +104,7 @@ def relatorio():
         "confirmados": confirmados,
         "pendentes": pendentes
     }
+
+@app.get("/convidados/mesa/{numero}")
+def listar_por_mesa(numero: int):
+    return [c for c in convidados if c["mesa"] == numero]
